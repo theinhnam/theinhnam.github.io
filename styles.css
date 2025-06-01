@@ -1,0 +1,136 @@
+:root {
+  --bg: #1e1e1e;
+  --text: #e5e5e5;
+  --prompt: #8be9fd;
+  --red: #ff5f56;
+  --yellow: #ffbd2e;
+  --green: #27c93f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terminal {
+  width: 90%;
+  max-width: 700px;
+  background: #2d2d2d;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  background: #444;
+  padding: 12px 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  user-select: none;
+}
+.red { background: var(--red); }
+.yellow { background: var(--yellow); }
+.green { background: var(--green); }
+
+.terminal-body {
+  padding: 20px;
+  height: 400px;
+  overflow-y: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  white-space: pre-wrap;
+}
+
+.line {
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background: #1e1e1e;
+  border-top: 1px solid #444;
+}
+
+.prompt {
+  color: var(--prompt);
+  margin-right: 8px;
+  user-select: none;
+  font-weight: bold;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+/* input caret blink */
+#command-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  caret-color: var(--prompt);
+  animation: blink 1.2s steps(2, start) infinite;
+}
+
+/* Scrollbar for terminal */
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+.terminal-body::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+/* Blinking caret animation */
+@keyframes blink {
+  0%, 50% {
+    caret-color: var(--prompt);
+  }
+  50.1%, 100% {
+    caret-color: transparent;
+  }
+}
+
+a {
+  color: var(--prompt);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.output-error {
+  color: #ff6c6b;
+  font-weight: bold;
+}
+.output-warn {
+  color: #f9e79f;
+  font-weight: bold;
+}

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nguyen Duy Thanh Nam aka theinhnam</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nguyen Duy Thanh Nam aka theinhnam</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Nguyen Duy Thanh Nam</h1>
-    <p>
-        💻 Developer and Researcher |
-        🌏 Passionate about white-hat hacking & emerging technologies |
-        <img src="https://flagcdn.com/w40/vn.png" alt="VN flag" style="height: 1em; vertical-align: middle;" />
-        Việt Nam
-    </p>
-    <div class="links">
-      <a href="https://github.com/theinhnam" target="_blank">GitHub</a>
-      <a href="mailto:namndt1773@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/yourusername/" target="_blank">LinkedIn</a>
-    </div>
+
+<div class="terminal" role="main" aria-label="Terminal portfolio">
+  <div class="terminal-header" aria-hidden="true">
+    <span class="btn red"></span>
+    <span class="btn yellow"></span>
+    <span class="btn green"></span>
   </div>
+  <div class="terminal-body" id="output" aria-live="polite" aria-atomic="false" tabindex="0"></div>
+  <div class="input-line">
+    <span class="prompt">➜</span>
+    <input type="text" id="command-input" autocomplete="off" autofocus spellcheck="false" aria-label="Terminal command input" />
+  </div>
+</div>
+
+<script src="terminal.js"></script>
+
 </body>
 </html>
